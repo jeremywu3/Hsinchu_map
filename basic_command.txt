@@ -1,0 +1,26 @@
+1. Find the city/townships have two rivers pass through
+[OK] SELECT *
+     FROM RiverPass
+     GROUP BY `city-eng-name`
+     HAVING COUNT(*)=2
+
+2. Find cities where population greater than 30,000
+[OK] SELECT `city-id`,`population`
+     FROM CITY
+     WHERE `population`>30000
+
+3. Find the cities where area size are greater than “湖口(Hukou Township)” 
+[OK] SELECT `city-id`,`area-size`
+     FROM CITY
+     WHERE `area-size`>58.4303
+
+4. Find the cities border adjacent to “竹北(Chupei Township)”
+[OK] SELECT *
+     FROM ADJACENT
+     WHERE `city-eng-name-1`='Zhubei City'
+
+5. Which city/township has the most POI(Point of Interests)
+
+
+EXTRA:
+[OK] select `city-id`,`population`,`area-size` from CITY where `city-id`!='0x00'
